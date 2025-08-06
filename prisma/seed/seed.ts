@@ -50,7 +50,7 @@ async function main() {
     },
   });
 
-  // 4. Create Orders (link with userId and productId)
+  // 4. Create Orders 
   await prisma.orders.createMany({
     data: [
       {
@@ -72,12 +72,12 @@ async function main() {
     ],
   });
 
-  console.log("✅ Seeding completed successfully.");
+  console.log(" Seeding completed successfully.");
 }
 
 main()
   .catch((e) => {
-    console.error("❌ Seeding error:", e);
+    console.error(" Seeding error:", e);
     process.exit(1);
   })
   .finally(async () => {

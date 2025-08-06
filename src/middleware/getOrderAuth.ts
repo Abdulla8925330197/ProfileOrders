@@ -14,7 +14,7 @@ export const decodeFilterToken = (
   jwt.verify(token, process.env.JWT_SECRET || "your_jwt_secret", (err, decoded) => {
     if (err) return res.sendStatus(403);
 
-    // Cast to your custom FilteredRequest here
+    
     (req as any).filterPayload = decoded as OrderFilterDto;
 
     next();
